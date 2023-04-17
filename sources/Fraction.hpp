@@ -37,17 +37,17 @@ namespace ariel{
             Fraction operator*(const Fraction&); 
             
             // Fraction to float 
-            Fraction operator+(const float);
-            Fraction operator-(const float); 
-            Fraction operator/(const float);
-            Fraction operator*(const float);
+            Fraction operator+(float);
+            Fraction operator-(float); 
+            Fraction operator/(float);
+            Fraction operator*(float);
 
 
             // float to fraction 
-            friend Fraction operator+(const float, const Fraction&);
-            friend Fraction operator-(const float, const Fraction&);
-            friend Fraction operator/(const float, const Fraction&);
-            friend Fraction operator*(const float, const Fraction&);
+            friend Fraction operator+(float, const Fraction&);
+            friend Fraction operator-(float, const Fraction&);
+            friend Fraction operator/(float, const Fraction&);
+            friend Fraction operator*(float, const Fraction&);
             
          
 
@@ -70,25 +70,25 @@ namespace ariel{
             //----------------------------------------
             
             // fraction to fraction 
-            friend bool operator==(const Fraction& frac1, const Fraction& frac2);
-            friend bool operator>(const Fraction& frac1, const Fraction& frac2);
-            friend bool operator>=(const Fraction& frac1, const Fraction& frac2);
-            friend bool operator<(const Fraction& frac1, const Fraction& frac2);
-            friend bool operator<=(const Fraction& frac1, const Fraction& frac2);
+            friend bool operator==(const Fraction&, const Fraction&);
+            friend bool operator>(const Fraction&, const Fraction&);
+            friend bool operator>=(const Fraction&, const Fraction&);
+            friend bool operator<(const Fraction&, const Fraction&);
+            friend bool operator<=(const Fraction&, const Fraction&);
 
             // float to fraction
-            friend bool operator==(const float, const Fraction& frac);
-            friend bool operator>(const float, const Fraction& frac);
-            friend bool operator>=(const float, const Fraction& frac);
-            friend bool operator<(const float, const Fraction& frac);
-            friend bool operator<=(const float, const Fraction& frac);
+            friend bool operator==(float, const Fraction&);
+            friend bool operator>(float, const Fraction&);
+            friend bool operator>=(float, const Fraction&);
+            friend bool operator<(float, const Fraction&);
+            friend bool operator<=(float, const Fraction&);
 
             // fraction to float 
-            friend bool operator==(const Fraction& frac1, const float);
-            friend bool operator>(const Fraction& frac1, const float);
-            friend bool operator>=(const Fraction& frac1, const float);
-            friend bool operator<(const Fraction& frac1, const float);
-            friend bool operator<=(const Fraction& frac1, const float);
+            friend bool operator==(const Fraction&, float);
+            friend bool operator>(const Fraction&, float);
+            friend bool operator>=(const Fraction&, float);
+            friend bool operator<(const Fraction&, float);
+            friend bool operator<=(const Fraction&, float);
 
 
             
@@ -100,11 +100,8 @@ namespace ariel{
             friend std::ostream& operator<< (std::ostream& output, const Fraction& frac);
 
             // input 
-            friend std::istream& operator>> (std::istream& input , Fraction& frac);
+            friend std::istream& operator>> (std::istream&, Fraction&);
             //-------------------------------------
-
-
-    
     };
 
 }

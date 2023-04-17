@@ -25,9 +25,6 @@ TEST_CASE("initialization"){
 }
 
 
-
-
-
 TEST_CASE("Camprison operation"){
 
     SUBCASE("Fractoion to fraction"){
@@ -39,7 +36,7 @@ TEST_CASE("Camprison operation"){
         CHECK(b>a); 
         CHECK(c>=d); 
         CHECK(a<b);
-        CHECK(d<=c); 
+        CHECK(d<=b); 
         CHECK(c==d); 
     }
 
@@ -50,7 +47,7 @@ TEST_CASE("Camprison operation"){
         CHECK(a>0.25); 
         CHECK(b>=0.5); 
         CHECK(a<0.75);
-        CHECK(b<=1); 
+        CHECK(b<=0.5); 
         CHECK(a==0.541); 
     }
 
@@ -69,7 +66,7 @@ TEST_CASE("Camprison operation"){
 
 
 
-TEST_CASE(" operations"){
+TEST_CASE("Arithmetic operations"){
 
     SUBCASE("Fraction to fraction"){
         Fraction a(2,2); 
@@ -125,18 +122,19 @@ TEST_CASE("Increment & decrement"){
 TEST_CASE("I/O"){
 
     SUBCASE("input"){
+
         Fraction a(1,10); 
-        std::stringstream input("5 10\n"); // Simulated input
+        std::stringstream input("5,10\n");
         input >> a; 
-
         CHECK(a == 0.5); 
-
     }
 
-    SUBCASE("Output vs fraction && fraction vs output"){
-        Fraction a(1,10); 
+    SUBCASE("Output"){
 
-        CHECK_NOTHROW(std::cout << a);
+        Fraction a(1,10); 
+        std::stringstream output; 
+        output << a; 
+        CHECK(output.str() == "1/10"); 
     }
 }
 
